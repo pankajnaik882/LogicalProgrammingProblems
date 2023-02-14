@@ -4,28 +4,18 @@
     {
         public static void Main(string[] args)
         {
-            int a = 0, i, num;
-            Console.WriteLine("Enter your Number to Check Prime number or not");
-            num = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(num);
-            for (i = 1; i <= num; i++)
-            {
+            int n, reverse = 0, num, rem;
+            Console.WriteLine("Enter a Number");
+            n = Convert.ToInt32(Console.ReadLine());
 
-                if (num % i == 0)
-                {
-                    a++;
-
-                }
-            }
-            if (a == 2)
+            while (n != 0)
             {
-                Console.WriteLine("Prime number");
+                rem = n % 10;
+                reverse = reverse * 10 + rem;
+                n = n / 10;
 
             }
-            else
-            {
-                Console.WriteLine("Not Prime number");
-            }
+            Console.WriteLine("Reversed Number " + reverse);
         }
     }
 }
