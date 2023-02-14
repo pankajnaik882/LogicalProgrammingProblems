@@ -4,28 +4,27 @@
     {
         public static void Main(string[] args)
         {
-            int n, i, sum;
-            int mn, mx;
-            Console.WriteLine("Input the Starting range or number");
-            mn = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Input the Starting range or number");
-            mx = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("The Perfect Number within the given range : ");
-            for (n = mn; n <= mx; n++)
+            int a = 0, i, num;
+            Console.WriteLine("Enter your Number to Check Prime number or not");
+            num = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(num);
+            for (i = 1; i <= num; i++)
             {
-                i = 1;
-                sum = 0;
-                while (i < n)
+
+                if (num % i == 0)
                 {
-                    if (n % i == 0)
-                        sum = sum + i;
-                    i++;
+                    a++;
+
                 }
-                if (sum == n)
-                {
-                    Console.WriteLine("{0}", n);
-                }
+            }
+            if (a == 2)
+            {
+                Console.WriteLine("Prime number");
+
+            }
+            else
+            {
+                Console.WriteLine("Not Prime number");
             }
         }
     }
