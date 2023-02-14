@@ -1,32 +1,32 @@
-﻿using System.Diagnostics;
-
-namespace LogicalProgram
+﻿namespace LogicalProgram
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter A value for FabSeries :-");
-            int fabS = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine(fabS);
-            int num1 = 0;
-            int num2 = 1;
-            int nextNum;
-            if (fabS < 2)
+            int n, i, sum;
+            int mn, mx;
+            Console.WriteLine("Input the Starting range or number");
+            mn = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input the Starting range or number");
+            mx = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("The Perfect Number within the given range : ");
+            for (n = mn; n <= mx; n++)
             {
-                Console.WriteLine("Enter a value greater than 2 if u want to see Fabseries :");
-            }
-            else
-            {
-                Console.Write(num1 + " " + num2 + " ");
-                for (int i = 2; i < fabS; i++)
+                i = 1;
+                sum = 0;
+                while (i < n)
                 {
-                    nextNum = num1 + num2;
-                    Console.Write(nextNum + " ");
-                    num1 = num2;
-                    num2 = nextNum;
+                    if (n % i == 0)
+                        sum = sum + i;
+                    i++;
                 }
-            }    
+                if (sum == n)
+                {
+                    Console.WriteLine("{0}", n);
+                }
+            }
         }
     }
 }
