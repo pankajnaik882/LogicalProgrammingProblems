@@ -1,21 +1,36 @@
-﻿namespace LogicalProgram
+﻿namespace Program
 {
-    public class Program
+    public class logical
     {
         public static void Main(string[] args)
         {
-            int n, reverse = 0, num, rem;
-            Console.WriteLine("Enter a Number");
-            n = Convert.ToInt32(Console.ReadLine());
+            int first=0;
+            int temp;
+            Console.WriteLine("how many coupon number you required ?");
+            int Number = Convert.ToInt32(Console.ReadLine());
 
-            while (n != 0)
+            Console.WriteLine("genreted coupon number");
+
+            for (int i = 0; i < Number; i++)
             {
-                rem = n % 10;
-                reverse = reverse * 10 + rem;
-                n = n / 10;
+                Random number = new Random();
+                int coupon = number.Next(10000, 100000);
 
+                Console.WriteLine("Coupon : "+coupon);
+                Console.ReadLine();
+                temp = coupon;
+                first = temp;
+
+                if (first != temp)
+                {
+                    Console.WriteLine("Coupon Are same");
+                }
+                else
+                {
+                    Console.WriteLine("Coupon are Different");
+                }
+                
             }
-            Console.WriteLine("Reversed Number " + reverse);
         }
     }
 }
