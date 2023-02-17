@@ -4,8 +4,8 @@
     {
         public static void Main(string[] args)
         {
-            int first=0;
-            int temp;
+            int CurrentValue = 0;
+            int LastValue=0;
             Console.WriteLine("how many coupon number you required ?");
             int Number = Convert.ToInt32(Console.ReadLine());
 
@@ -15,21 +15,21 @@
             {
                 Random number = new Random();
                 int coupon = number.Next(10000, 100000);
+                CurrentValue = coupon;
 
-                Console.WriteLine("Coupon : "+coupon);
+                Console.WriteLine("Coupon : " + coupon);
                 Console.ReadLine();
-                temp = coupon;
-                first = temp;
 
-                if (first != temp)
+                if (CurrentValue == LastValue)
                 {
-                    Console.WriteLine("Coupon Are same");
+                    Console.WriteLine("Coupon already exist");
                 }
                 else
                 {
-                    Console.WriteLine("Coupon are Different");
+                    Console.WriteLine("Coupon is Unique");
                 }
-                
+
+                LastValue = CurrentValue;
             }
         }
     }
