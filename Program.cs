@@ -4,6 +4,7 @@
     {
         public static void Main(string[] args)
         {
+            
             int CurrentValue = 0;
             int LastValue=0;
             Console.WriteLine("how many coupon number you required ?");
